@@ -1,11 +1,11 @@
 plugins {
-	id 'application'
-}
-apply plugin: 'java'
-ext {
-	javaMainClass = "Main"
+	id 'java'
 }
 
-application {
-	mainClassName = javaMainClass
+tasks.named('jar') {
+	attributes['Main-Class'] = 'java.main'
+}
+
+repositories {
+	mavenCentral()
 }
