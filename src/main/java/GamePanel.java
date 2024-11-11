@@ -1,5 +1,7 @@
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
@@ -36,6 +38,28 @@ public class GamePanel extends JPanel implements Runnable {
 		while (gameThread != null) {
 
 			// System.out.println("This game loop is running");
+			// TODO:UPDATE: update information such as character postions
+			update();
+			// TODO: DRAW: draw the screen with the updated information
+			repaint();
 		}
+	}
+
+	public void update() {
+
+	}
+
+	public void paintComponent(Graphics g) {
+
+		super.paintComponent(g);
+
+		Graphics2D g2 = (Graphics2D) g;
+
+		g2.setColor(Color.white);
+
+		g2.fillRect(100, 100, tileSize, tileSize);
+
+		g2.dispose();
+
 	}
 }
